@@ -41,6 +41,7 @@ func main() {
 							}
 							// if the message user send is "メールを確認", then bot send unread messages.
 							if message.Text == "メールを確認" {
+								// search unread messages
 								unreadMessages, err := process()
 								if err != nil {
 									log.Fatalf("Unable to retrieve unread messages: %v", err)
