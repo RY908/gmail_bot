@@ -11,6 +11,7 @@ import (
 
 
 func main() {
+	// connect to Line bot
 	bot, err := linebot.New(
 		os.Getenv("LINE_CHANNEL_SECRET_3"), 
 		os.Getenv("LINE_ACCESS_TOKEN_3"),
@@ -38,6 +39,7 @@ func main() {
 							if event.ReplyToken == "00000000000000000000000000000000" {
 									return
 							}
+							// if the message user send is "メールを確認", then bot send unread messages.
 							if message.Text == "メールを確認" {
 								unreadMessages, err := process()
 								if err != nil {
