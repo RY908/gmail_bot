@@ -819,5 +819,8 @@
 			"revisionTime": "2020-08-12T18:14:11Z"
 		}
 	],
-	"rootPath": "Mebio"
+	"rootPath": "Mebio",
+	"heroku": {
+		"goVersion": "go1.14.6"
+	}
 }
