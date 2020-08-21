@@ -821,6 +821,7 @@
 	],
 	"rootPath": "Mebio",
 	"heroku": {
+		"install" : ["./..."],
 		"goVersion": "go1.14.6"
 	}
 }
