@@ -1,1 +1,1 @@
-web: Mebio
+web: bin/Mebio
