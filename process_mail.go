@@ -87,7 +87,7 @@ func process() (string, error) {
 
 func toString(unreadMessages []info) (string, error) {
 	res := ""
-	for _, msg := range unreadMessages {
+	for i, msg := range unreadMessages {
 		// extract year/month/day from msg.Date
 		date, err := time.Parse(time.RFC1123Z, msg.Date)
 		formattedDate := date.Format("2006/01/02")
@@ -101,7 +101,11 @@ func toString(unreadMessages []info) (string, error) {
 		// extract subject from msg.Subject
 		sub := msg.Subject
 
-		res += fmt.Sprintf("%s\n(%s)\n[%s]\n\n", formattedDate, mail, sub)
+		if i == len(unreadMessages)-1 {
+			res += fmt.Sprintf("%s\n(%s)\n[%s]", formattedDate, mail, sub)
+		} else {
+			res += fmt.Sprintf("%s\n(%s)\n[%s]\n\n", formattedDate, mail, sub)
+		}
 	}
 	return res, nil
 }
