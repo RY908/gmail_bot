@@ -1,14 +1,14 @@
 package main
 
 import (
+	"github.com/line/line-bot-sdk-go/linebot"
 	"log"
 	"os"
-	"github.com/line/line-bot-sdk-go/linebot"
 )
 
 func main() {
 	bot, err := linebot.New(
-		os.Getenv("LINE_CHANNEL_SECRET_3"), 
+		os.Getenv("LINE_CHANNEL_SECRET_3"),
 		os.Getenv("LINE_ACCESS_TOKEN_3"),
 	)
 
